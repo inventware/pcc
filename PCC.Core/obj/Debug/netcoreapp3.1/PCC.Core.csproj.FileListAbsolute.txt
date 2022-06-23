@@ -1,0 +1,10 @@
+C:\Projetos\PCC.Core\PCC.Core\bin\Debug\netcoreapp3.1\PCC.Core.deps.json
+C:\Projetos\PCC.Core\PCC.Core\bin\Debug\netcoreapp3.1\PCC.Core.dll
+C:\Projetos\PCC.Core\PCC.Core\bin\Debug\netcoreapp3.1\PCC.Core.pdb
+C:\Projetos\PCC.Core\PCC.Core\obj\Debug\netcoreapp3.1\PCC.Core.AssemblyInfoInputs.cache
+C:\Projetos\PCC.Core\PCC.Core\obj\Debug\netcoreapp3.1\PCC.Core.AssemblyInfo.cs
+C:\Projetos\PCC.Core\PCC.Core\obj\Debug\netcoreapp3.1\PCC.Core.csproj.CoreCompileInputs.cache
+C:\Projetos\PCC.Core\PCC.Core\obj\Debug\netcoreapp3.1\PCC.Core.dll
+C:\Projetos\PCC.Core\PCC.Core\obj\Debug\netcoreapp3.1\PCC.Core.pdb
+C:\Projetos\PCC.Core\PCC.Core\obj\Debug\netcoreapp3.1\PCC.Core.csproj.AssemblyReference.cache
+C:\Projetos\PCC.Core\PCC.Core\obj\Debug\netcoreapp3.1\PCC.Core.GeneratedMSBuildEditorConfig.editorconfig

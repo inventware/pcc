@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Parser\IPccParserHandler.cs" />
+    <Compile Remove="Parser\PccIntegerParserHandler.cs" />
+    <Compile Remove="Parser\PccParserHandler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PCC.Core\PCC.Core.csproj" />
+  </ItemGroup>
+
+</Project>

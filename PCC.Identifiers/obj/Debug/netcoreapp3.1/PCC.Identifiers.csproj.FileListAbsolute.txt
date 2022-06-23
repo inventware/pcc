@@ -1,0 +1,13 @@
+C:\Projetos\PCC.Core\PCC.Identifiers\obj\Debug\netcoreapp3.1\PCC.Identifiers.AssemblyInfoInputs.cache
+C:\Projetos\PCC.Core\PCC.Identifiers\obj\Debug\netcoreapp3.1\PCC.Identifiers.AssemblyInfo.cs
+C:\Projetos\PCC.Core\PCC.Identifiers\obj\Debug\netcoreapp3.1\PCC.Identifiers.csproj.CoreCompileInputs.cache
+C:\Projetos\PCC.Core\PCC.Identifiers\bin\Debug\netcoreapp3.1\PCC.Identifiers.deps.json
+C:\Projetos\PCC.Core\PCC.Identifiers\bin\Debug\netcoreapp3.1\PCC.Identifiers.dll
+C:\Projetos\PCC.Core\PCC.Identifiers\bin\Debug\netcoreapp3.1\PCC.Identifiers.pdb
+C:\Projetos\PCC.Core\PCC.Identifiers\bin\Debug\netcoreapp3.1\PCC.Core.dll
+C:\Projetos\PCC.Core\PCC.Identifiers\bin\Debug\netcoreapp3.1\PCC.Core.pdb
+C:\Projetos\PCC.Core\PCC.Identifiers\obj\Debug\netcoreapp3.1\PCC.Identifiers.csproj.CopyComplete
+C:\Projetos\PCC.Core\PCC.Identifiers\obj\Debug\netcoreapp3.1\PCC.Identifiers.dll
+C:\Projetos\PCC.Core\PCC.Identifiers\obj\Debug\netcoreapp3.1\PCC.Identifiers.pdb
+C:\Projetos\PCC.Core\PCC.Identifiers\obj\Debug\netcoreapp3.1\PCC.Identifiers.csproj.AssemblyReference.cache
+C:\Projetos\PCC.Core\PCC.Identifiers\obj\Debug\netcoreapp3.1\PCC.Identifiers.GeneratedMSBuildEditorConfig.editorconfig
