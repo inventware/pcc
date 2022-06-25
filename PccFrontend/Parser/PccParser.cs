@@ -6,38 +6,34 @@ using System.Threading;
 
 namespace PCC.Frontend.Parser
 {
-    public class PccParser : IPccParser
+    public class PccParser : PccAbstractParser, IPccParser
     {
-        private IPccLexer _pccLexer;
-        private IPccRegExHandler _pccRegExHandler;
-        private IPccParserNotificationHandler _notificationsHandler;
-        private CancellationToken _cancellationToken;
-        private IPccToken _lookAhead;
-        private int _tokenCount;
+        private PccSubroutineParser _pccSubroutineParser;
+        private PccFunctionParser _pccFunctionParser;
+        private string _sourceCode;
 
 
-        public PccParser(IPccRegExHandler pccRegExHandler, IPccParserNotificationHandler
+        public PccParser(IPccRegExHandler pccRegExHandler, PccSubroutineParser pccSubroutineParser,
+            PccFunctionParser pccFunctionParser, IPccParserNotificationHandler
             notificationsHandler, CancellationTokenSource cancellationTokenSource)
+        : base (pccRegExHandler, notificationsHandler, cancellationTokenSource)
         {
-            _pccRegExHandler = pccRegExHandler;
-            _notificationsHandler = notificationsHandler;
-            _cancellationToken = cancellationTokenSource.Token;
+            _pccSubroutineParser = pccSubroutineParser;
+            _pccFunctionParser = pccFunctionParser;
             _tokenCount = 0;
             _lookAhead = null;
         }
 
-
-        public int TokenCount { get => _tokenCount; protected set => _tokenCount = value; }
-        
-        public IPccParserNotificationHandler NotificationsHandler { get => _notificationsHandler; protected set => _notificationsHandler = value; }
-
-        
-        public void Parser(string sourceCode)
+      
+        public void Parser(string sourceCode, int? tokenCount, IPccToken lookAhead, IPccLexer pccLexer, 
+            IPccParserNotificationHandler NotificationsHandler)
         {
+            IPccToken tokenForForcedInterruption = null;
+            _sourceCode = sourceCode;
+
             var lexerNotificationHandler = new PccLexerNotificationHandler();
             _pccLexer = new PccLexer(sourceCode, _pccRegExHandler, lexerNotificationHandler, _cancellationToken);
             _lookAhead = _pccLexer.GetNextToken(_tokenCount).Result;
-            IPccToken tokenForForcedInterruption = null;
 
             while (_lookAhead != null && !_lookAhead.Name.Equals(ETokenName.END_OF_CODE))
             {
@@ -429,25 +425,6 @@ namespace PCC.Frontend.Parser
             }
         }
 
-        private void IncrTokenCountIfIsNotEndOfCode()
-        {
-            if (!_lookAhead.Name.Equals(ETokenName.END_OF_CODE)){
-                _tokenCount++;
-            }
-        }
-
-        private void Match(ETokenName tokenName)
-        {
-            if (_lookAhead.Name == tokenName) 
-            {
-                _tokenCount += 1;
-                _lookAhead = _pccLexer.GetNextToken(_tokenCount).Result;
-            }
-            else {
-                _notificationsHandler.Handle(new PccParserNotification("PAR_" + _tokenCount.ToString(),
-                    "SYNTAX ERROR", _lookAhead.Lexeme.Line));
-            }
-        }
 
         private void PrivateDeclarationStatement()
         {
@@ -460,11 +437,19 @@ namespace PCC.Frontend.Parser
                     break;
 
                 case ETokenName.SUB:
-                    SubroutineStatement();
+                    _pccSubroutineParser.Parser(_sourceCode, _tokenCount, _lookAhead, _pccLexer, _notificationsHandler);
+                    _tokenCount = _pccSubroutineParser.TokenCount;
+                    _lookAhead = _pccSubroutineParser.LookAhead;
+                    _pccLexer = _pccSubroutineParser.PccLexer;
+                    _notificationsHandler = _pccSubroutineParser.NotificationsHandler;
                     break;
 
                 case ETokenName.FUNCTION:
-                    FunctionStatement();
+                    _pccFunctionParser.Parser(_sourceCode, _tokenCount, _lookAhead, _pccLexer, _notificationsHandler);
+                    _tokenCount = _pccFunctionParser.TokenCount;
+                    _lookAhead = _pccFunctionParser.LookAhead;
+                    _pccLexer = _pccFunctionParser.PccLexer;
+                    _notificationsHandler = _pccFunctionParser.NotificationsHandler;
                     break;
 
                 default:
@@ -485,107 +470,24 @@ namespace PCC.Frontend.Parser
                     break;
 
                 case ETokenName.SUB:
-                    SubroutineStatement();
+                    _pccSubroutineParser.Parser(_sourceCode, _tokenCount, _lookAhead, _pccLexer, _notificationsHandler);
+                    _tokenCount = _pccSubroutineParser.TokenCount;
+                    _lookAhead = _pccSubroutineParser.LookAhead;
+                    _pccLexer = _pccSubroutineParser.PccLexer;
+                    _notificationsHandler = _pccSubroutineParser.NotificationsHandler;
                     break;
 
                 case ETokenName.FUNCTION:
-                    FunctionStatement();
+                    _pccFunctionParser.Parser(_sourceCode, _tokenCount, _lookAhead, _pccLexer, _notificationsHandler);
+                    _tokenCount = _pccFunctionParser.TokenCount;
+                    _lookAhead = _pccFunctionParser.LookAhead;
+                    _pccLexer = _pccFunctionParser.PccLexer;
+                    _notificationsHandler = _pccFunctionParser.NotificationsHandler;
                     break;
 
                 default:
                     _notificationsHandler.Handle(new PccParserNotification("PAR_" + _tokenCount.ToString(),
                         "SYNTAX ERROR", _lookAhead.Lexeme.Line));
-                    break;
-            }
-        }
-
-        private void SubroutineStatement()
-        {
-            Match(ETokenName.SUB);
-            Match(ETokenName.ID);
-            Match(ETokenName.OPEN_BRACKET);
-            ParametersStatement();
-            // Bloco de Codigo
-            Match(ETokenName.END);
-            Match(ETokenName.SUB);
-        }
-
-        private void FunctionStatement()
-        {
-            Match(ETokenName.FUNCTION);
-            Match(ETokenName.ID);
-            Match(ETokenName.OPEN_BRACKET);
-            // carrega parametros
-            Match(ETokenName.CLOSE_BRACKET);
-            // Bloco de Codigo
-            Match(ETokenName.END);
-            Match(ETokenName.FUNCTION);
-        }
-
-        private void ParametersStatement()
-        {
-            // IPccToken tokenForForcedInterruption = null;
-            int tokenForInterruptionControl = int.MinValue;
-
-            while (_lookAhead.Name != ETokenName.CLOSE_BRACKET &&
-                   _tokenCount != tokenForInterruptionControl)
-            {
-                // Security condition: It avoids infinite loop
-                tokenForInterruptionControl = _tokenCount;
-                ParameterStatement();
-            }
-            // carrega parametros
-            Match(ETokenName.CLOSE_BRACKET);
-        }
-
-        private void ParameterStatement()
-        {
-            Match(ETokenName.ID);
-            Match(ETokenName.AS);
-            IdentifierTypeStatement();
-        }
-
-        private void IdentifierTypeStatement()
-        {
-            switch (_lookAhead.Name)
-            {
-                case ETokenName.INTEGER:
-                    Match(ETokenName.INTEGER);
-                    break;
-
-                case ETokenName.LONG:
-                    Match(ETokenName.LONG);
-                    break;
-
-                case ETokenName.SINGLE:
-                    Match(ETokenName.SINGLE);
-                    break;
-
-                case ETokenName.DOUBLE:
-                    Match(ETokenName.DOUBLE);
-                    break;
-
-                case ETokenName.STRING:
-                    Match(ETokenName.STRING);
-                    break;
-
-                case ETokenName.DATE:
-                    Match(ETokenName.DATE);
-                    break;
-
-                case ETokenName.BOOLEAN:
-                    Match(ETokenName.BOOLEAN);
-                    break;
-
-                case ETokenName.OBJECT:
-                    Match(ETokenName.OBJECT);
-                    break;
-
-                case ETokenName.VARIANT:
-                    Match(ETokenName.SINGLE);
-                    break;
-
-                default:
                     break;
             }
         }
