@@ -3,9 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Documentation Folder
-/_Docs
-
 # User-specific files
 *.suo
 *.bak
@@ -36,6 +33,10 @@ bld/
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
+
+# Documentation Folder
+[Dd]ocs*/
+[Tt]emp*/
 
 # NUNIT
 *.VisualState.xml
