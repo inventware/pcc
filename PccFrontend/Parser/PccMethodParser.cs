@@ -7,7 +7,6 @@ namespace PCC.Frontend.Parser
     {
         protected void ParametersStatement()
         {
-            // IPccToken tokenForForcedInterruption = null;
             int tokenForInterruptionControl = int.MinValue;
 
             while (_lookAhead.Name != ETokenName.CLOSE_BRACKET &&
@@ -15,10 +14,32 @@ namespace PCC.Frontend.Parser
             {
                 // Security condition: It avoids infinite loop
                 tokenForInterruptionControl = _tokenCount;
+                PassingMechanismParameterStatement();
+
+                // When there are more than 1 parameter!
+                if(_lookAhead.Name == ETokenName.COMMA){
+                    Match(ETokenName.COMMA);
+                }
+            }
+            // Load parameters
+            Match(ETokenName.CLOSE_BRACKET);
+        }
+
+        private void PassingMechanismParameterStatement()
+        {
+            if (_lookAhead.Name == ETokenName.BYREF)
+            {
+                Match(ETokenName.BYREF);
                 ParameterStatement();
             }
-            // carrega parametros
-            Match(ETokenName.CLOSE_BRACKET);
+            else if (_lookAhead.Name == ETokenName.BYVAL)
+            {
+                Match(ETokenName.BYVAL);
+                ParameterStatement();
+            }
+            else {
+                ParameterStatement();
+            }
         }
 
         private void ParameterStatement()

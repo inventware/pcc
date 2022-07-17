@@ -84,6 +84,12 @@ C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\zh-Hans\Micros
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\PCC.Core.dll
+C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\PCC.Identifiers.dll
+C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\PCC.Core.pdb
+C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\PCC.Identifiers.pdb
+C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.csproj.AssemblyReference.cache
+C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.AssemblyInfoInputs.cache
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.AssemblyInfo.cs
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.csproj.CoreCompileInputs.cache
@@ -91,9 +97,3 @@ C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifier
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.dll
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.pdb
 C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.genruntimeconfig.cache
-C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\PCC.Core.dll
-C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\PCC.Identifiers.dll
-C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\PCC.Core.pdb
-C:\Projetos\PCC.Core\PCC.Identifiers.Test\bin\Debug\netcoreapp3.1\PCC.Identifiers.pdb
-C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.csproj.AssemblyReference.cache
-C:\Projetos\PCC.Core\PCC.Identifiers.Test\obj\Debug\netcoreapp3.1\PCC.Identifiers.Test.GeneratedMSBuildEditorConfig.editorconfig

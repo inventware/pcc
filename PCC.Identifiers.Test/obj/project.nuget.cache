@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GdfYBXbnjb0yiYgisFUmwFRjyE+9GVIaYE0bTVo1+h/QOujOBrUu47YN2Zr6PVW+hmqLuyxP3zTkn6xFbvInSg==",
+  "dgSpecHash": "CzRNZG5y5moGghgTDg9eYsrkAT54f+KPL5i/Oae8gi4Yr8aotdqvC9zsdEO1sXCGgeOwfHiHd/Vo+AFoVA3Y6Q==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\PCC.Core\\PCC.Identifiers.Test\\PCC.Identifiers.Test.csproj",
   "expectedPackageFiles": [
@@ -90,7 +90,10 @@
     "C:\\Users\\flavi\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\flavi\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\flavi\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\flavi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\flavi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\flavi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\flavi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\flavi\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -58,6 +58,30 @@ namespace PCC.Frontend.Test.Parser
         }
 
         [TestMethod]
+        public void SourceCodeHaveAPublicSubNoParametersWithParameterNoAsNoTypeWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (parameter) \n";
+            sourceCode += "End Sub \n";
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 8);
+            Assert.IsTrue(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
+        [TestMethod]
+        public void SourceCodeHaveAPublicSubNoParametersWithParameterNoTypeWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (parameter As) \n";
+            sourceCode += "End Sub \n";
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 9);
+            Assert.IsTrue(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
+        [TestMethod]
         public void SourceCodeHaveAPublicSubWithOneIntegerParameterWithoutCodeBlock()
         {
             string sourceCode = "Public Sub GetById (value as Integer) \n";
@@ -200,6 +224,94 @@ namespace PCC.Frontend.Test.Parser
             Assert.AreEqual(_pccParser.TokenCount, 10);
             Assert.IsTrue(_pccParser.NotificationsHandler.HasNotifications());
         }
+
+        [TestMethod]
+        public void SourceCodeHaveAPublicSubWithOneUnknownTypeParameterWithoutCloseBracketWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (anyVariable as UnknownType \n";
+            sourceCode += "End Sub \n";
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 9);
+            Assert.IsTrue(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
+        [TestMethod]
+        public void SourceCodeHaveAPublicSubWithTwoIntegerParametersWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (value1 as Integer, value2 as Integer) \n";
+            sourceCode += "End Sub \n";
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 14);
+            Assert.IsFalse(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
+        [TestMethod]
+        public void SourceCodeHaveAPublicSubWithOneIntegerParameterAndOneLongParameterWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (value1 as Integer, value2 as long) \n";
+            sourceCode += "End Sub \n";
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 14);
+            Assert.IsFalse(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
+        [TestMethod]
+        public void SourceCodeHaveAPublicSubWithOneIntegerParameterAndOneLongParameterAndOneSingleParameterWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (value1 as Integer, value2 as long, value3 as single) \n";
+            sourceCode += "End Sub \n";
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 18);
+            Assert.IsFalse(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
+        [TestMethod]
+        public void SourceCodeHaveAPublicSubWithOneIntegerParameterAndOneLongParameterAndOneSingleAndOneDoubleParameterWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (value1 as Integer, value2 as long, value3 as double) \n";
+            sourceCode += "End Sub \n";
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 18);
+            Assert.IsFalse(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
+        [TestMethod]
+        public void SourceCodeHaveAPublicSubWithOneIntegerParameterAndOneLongParameterAndOneSingleAndOneDoubleParameterAndOneStringParameterAndOneDateParameterAndOneBooleanParameterAndOneObjetParameterAndOneVariantParameterWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (value1 as Integer, value2 as long, value3 as double, " + 
+                "value4 as string, value5 as date, value6 as boolean, value7 as OBJECT,  value8 as Variant) \n";
+            sourceCode += "End Sub \n";
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 38);
+            Assert.IsFalse(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
+        [TestMethod]
+        public void SourceCodeHaveAPublicSubWithOneIntegerParameterAndByrefOneLongParameterAndOneByvalSingleAndOneDoubleParameterAndOneByrefStringParameterAndOneDateParameterAndOneBooleanParameterAndOneObjetParameterAndOneByvalVariantParameterWithoutCodeBlock()
+        {
+            string sourceCode = "Public Sub GetById (byref value1 as Integer, value2 as long, byval value3 as single, " + //18
+                "value4 as double, byref value5 as string, value5 as date, value6 as boolean, value7 as OBJECT,  " + //21
+                "byval value8 as Variant) \n"; //5
+            sourceCode += "End Sub \n"; //2
+
+            _pccParser.Parser(sourceCode, null, null, null, null);
+
+            Assert.AreEqual(_pccParser.TokenCount, 46);
+            Assert.IsFalse(_pccParser.NotificationsHandler.HasNotifications());
+        }
+
 
         [TestMethod]
         public void SourceCodeHaveAPrivateSubNoParametersWithoutCodeBlock()

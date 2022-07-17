@@ -34,9 +34,8 @@ bld/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-# Documentation Folder
-[Dd]ocs*/
-[Tt]emp*/
+# Temporary Documentation Folder
+_Docs*/*.docx
 
 # NUNIT
 *.VisualState.xml

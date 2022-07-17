@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "veOrhEKCaRQZxJukTAuTLcZp0QfQJphSvyOOegozbaIYgOIhv10h7BtUf5RRjsjrK3uCK+8btsgAz9fzc9mMTQ==",
+  "dgSpecHash": "/Nj/mGPQyWsQmE4f3uJvWINck0K1N33pF3vMch5OAtvluj8BnZJLYzmFFoX+OGqyPGkwP8Wy88T32622YZfbqw==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\PCC.Core\\PCC.Identifiers\\PCC.Identifiers.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\flavi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\flavi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\flavi\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

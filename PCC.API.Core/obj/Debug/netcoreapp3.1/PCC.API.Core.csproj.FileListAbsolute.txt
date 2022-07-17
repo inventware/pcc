@@ -34,4 +34,3 @@ C:\Projetos\PCC.Core\PCC.API.Core\obj\Debug\netcoreapp3.1\PCC.API.Core.dll
 C:\Projetos\PCC.Core\PCC.API.Core\obj\Debug\netcoreapp3.1\PCC.API.Core.pdb
 C:\Projetos\PCC.Core\PCC.API.Core\obj\Debug\netcoreapp3.1\PCC.API.Core.genruntimeconfig.cache
 C:\Projetos\PCC.Core\PCC.API.Core\obj\Debug\netcoreapp3.1\PCC.API.Core.csproj.CopyComplete
-C:\Projetos\PCC.Core\PCC.API.Core\bin\Debug\netcoreapp3.1\PCC.API.Core.StaticWebAssets.xml

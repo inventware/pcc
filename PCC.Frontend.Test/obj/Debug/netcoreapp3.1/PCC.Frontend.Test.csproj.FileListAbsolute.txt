@@ -88,12 +88,12 @@ C:\Projetos\PCC.Core\PCC.Frontend.Test\bin\Debug\netcoreapp3.1\PCC.Core.dll
 C:\Projetos\PCC.Core\PCC.Frontend.Test\bin\Debug\netcoreapp3.1\PCC.Frontend.dll
 C:\Projetos\PCC.Core\PCC.Frontend.Test\bin\Debug\netcoreapp3.1\PCC.Frontend.pdb
 C:\Projetos\PCC.Core\PCC.Frontend.Test\bin\Debug\netcoreapp3.1\PCC.Core.pdb
+C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.csproj.AssemblyReference.cache
+C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.AssemblyInfoInputs.cache
 C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.AssemblyInfo.cs
 C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.csproj.CoreCompileInputs.cache
+C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.csproj.CopyComplete
 C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.dll
 C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.pdb
 C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.genruntimeconfig.cache
-C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.csproj.AssemblyReference.cache
-C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projetos\PCC.Core\PCC.Frontend.Test\obj\Debug\netcoreapp3.1\PCC.Frontend.Test.csproj.CopyComplete
